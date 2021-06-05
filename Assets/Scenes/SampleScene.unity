@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.1802847, g: 0.2257156, b: 0.30692425, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028504, g: 0.2257159, b: 0.30692488, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -518,7 +518,7 @@ WheelCollider:
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.01
-    m_ExtremumValue: 1
+    m_ExtremumValue: 0.9
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
     m_Stiffness: 2
@@ -1139,7 +1139,7 @@ WheelCollider:
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.01
-    m_ExtremumValue: 1
+    m_ExtremumValue: 0.9
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
     m_Stiffness: 2
@@ -2030,7 +2030,7 @@ MonoBehaviour:
   centerOfMass: {fileID: 663665316}
   motorForce: 2000
   breakForce: 3000
-  maxSteerAngle: 23
+  maxSteerAngle: 30
   wheelColliderLeftFront: {fileID: 376860431}
   wheelColliderRightFront: {fileID: 1147042714}
   wheelColliderLeftBack: {fileID: 1026908503}

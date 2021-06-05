@@ -19,6 +19,7 @@ public class CarController : MonoBehaviour
     [SerializeField] private float motorForce;
     [SerializeField] private float breakForce;
     [SerializeField] private float maxSteerAngle;
+    private bool braked;
 
     [SerializeField] private WheelCollider wheelColliderLeftFront;
     [SerializeField] private WheelCollider wheelColliderRightFront;
@@ -34,6 +35,7 @@ public class CarController : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody>();
         _rigidbody.centerOfMass = centerOfMass.localPosition;
+        braked=false;
     }
     private void FixedUpdate()
     {
@@ -64,28 +66,68 @@ public class CarController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         { 
         friction = wheelColliderRightBack.sidewaysFriction;
-        friction.extremumSlip = 0.7f;
+        friction.extremumSlip = 1.2f;
         wheelColliderRightBack.sidewaysFriction = friction;
 
         friction = wheelColliderLeftBack.sidewaysFriction;
-        friction.extremumSlip = 0.7f;
+        friction.extremumSlip = 1.2f;
         wheelColliderLeftBack.sidewaysFriction = friction;
 
+        friction = wheelColliderLeftFront.sidewaysFriction;
+        friction.extremumValue = 2f;
+        wheelColliderLeftFront.sidewaysFriction = friction;
+
+        friction = wheelColliderRightFront.sidewaysFriction;
+        friction.extremumValue = 2f;
+        wheelColliderRightFront.sidewaysFriction = friction;
+
+        braked=true;
+
         }
-        else
+        else if(braked)
         {
             friction = wheelColliderRightBack.sidewaysFriction;
+            friction.extremumSlip = 0.01f;
+            friction.extremumValue = 5f;
+            wheelColliderRightBack.sidewaysFriction = friction;
+
+            friction = wheelColliderLeftBack.sidewaysFriction;
+            friction.extremumSlip = 0.01f;
+            friction.extremumValue = 5f;
+            wheelColliderLeftBack.sidewaysFriction = friction;
+
+            friction = wheelColliderLeftFront.sidewaysFriction;
+            friction.extremumValue = 5f;
+            wheelColliderLeftFront.sidewaysFriction = friction;
+
+            friction = wheelColliderRightFront.sidewaysFriction;
+            friction.extremumValue = 5f;
+            wheelColliderRightFront.sidewaysFriction = friction;
+            braked=false;
+        }
+        else{
+            friction = wheelColliderRightBack.sidewaysFriction;
             friction.extremumSlip = 0.05f;
+            friction.extremumValue = 1;
             wheelColliderRightBack.sidewaysFriction = friction;
 
             friction = wheelColliderLeftBack.sidewaysFriction;
             friction.extremumSlip = 0.05f;
+            friction.extremumValue = 1;
             wheelColliderLeftBack.sidewaysFriction = friction;
+
+            friction = wheelColliderLeftFront.sidewaysFriction;
+            friction.extremumValue = .9f;
+            wheelColliderLeftFront.sidewaysFriction = friction;
+
+            friction = wheelColliderRightFront.sidewaysFriction;
+            friction.extremumValue = .9f;
+            wheelColliderRightFront.sidewaysFriction = friction;
         }
-        wheelColliderRightFront.brakeTorque = currentbreakForce/4f;
-        wheelColliderLeftFront.brakeTorque = currentbreakForce/4f;
-        wheelColliderLeftBack.brakeTorque = currentbreakForce/4f;
-        wheelColliderRightBack.brakeTorque = currentbreakForce/4f;
+        wheelColliderRightFront.brakeTorque = currentbreakForce/2;
+        wheelColliderLeftFront.brakeTorque = currentbreakForce/2;
+        wheelColliderLeftBack.brakeTorque = currentbreakForce/2;
+        wheelColliderRightBack.brakeTorque = currentbreakForce/2;
     }
 
     private void HandleSteering()
