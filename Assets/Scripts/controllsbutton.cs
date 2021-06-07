@@ -13,6 +13,8 @@ public class controllsbutton : MonoBehaviour
     public GameObject play;
     public GameObject controll_list;
     public AudioSource button_pressed;
+    public GameObject controlls2;
+    public GameObject title;
 
 
     public void list_of_controls()
@@ -25,6 +27,8 @@ public class controllsbutton : MonoBehaviour
         quit.SetActive(false);
 
         controll_list.SetActive(true);
+        controlls2.SetActive(true);
+        title.SetActive(false);
 
         button_pressed.Play();
     }

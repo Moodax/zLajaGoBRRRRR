@@ -17,6 +17,7 @@ public class backbutton : MonoBehaviour
     public GameObject title;
     public GameObject choose;
     public AudioSource button_pressed;
+    public GameObject controlls2;
 
     public void mainmenu()
     {
@@ -32,6 +33,7 @@ public class backbutton : MonoBehaviour
         controll_list.SetActive(false);
         title.SetActive(true);
         choose.SetActive(false);
+        controlls2.SetActive(false);
 
         button_pressed.Play();
     }

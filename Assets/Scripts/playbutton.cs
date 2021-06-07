@@ -15,6 +15,7 @@ public class playbutton : MonoBehaviour
     public GameObject title;
     public GameObject choose;
     public AudioSource button_pressed;
+    public GameObject controlls2;
 
     public void selectLevel()
     {
@@ -28,6 +29,7 @@ public class playbutton : MonoBehaviour
         quit.SetActive(false);
         title.SetActive(false);
         choose.SetActive(true);
+        controlls2.SetActive(false);
 
         button_pressed.Play();
     }
