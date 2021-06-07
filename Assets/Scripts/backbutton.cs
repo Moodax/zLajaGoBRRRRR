@@ -13,11 +13,10 @@ public class backbutton : MonoBehaviour
     public GameObject play;
     public GameObject icy;
 
-    public GameObject w;
-    public GameObject a;
-    public GameObject s;
-    public GameObject d;
-    public GameObject shift;
+    public GameObject controll_list;
+    public GameObject title;
+    public GameObject choose;
+    public AudioSource button_pressed;
 
     public void mainmenu()
     {
@@ -29,11 +28,12 @@ public class backbutton : MonoBehaviour
         play.SetActive(true);
         quit.SetActive(true);
 
-        w.SetActive(false);
-        a.SetActive(false);
-        s.SetActive(false);
-        d.SetActive(false);
-        shift.SetActive(false);
+
+        controll_list.SetActive(false);
+        title.SetActive(true);
+        choose.SetActive(false);
+
+        button_pressed.Play();
     }
 
 

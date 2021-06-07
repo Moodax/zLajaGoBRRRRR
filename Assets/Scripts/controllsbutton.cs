@@ -11,12 +11,8 @@ public class controllsbutton : MonoBehaviour
     public GameObject controlls;
     public GameObject quit;
     public GameObject play;
-
-    public GameObject w;
-    public GameObject a;
-    public GameObject s;
-    public GameObject d;
-    public GameObject shift;
+    public GameObject controll_list;
+    public AudioSource button_pressed;
 
 
     public void list_of_controls()
@@ -28,11 +24,8 @@ public class controllsbutton : MonoBehaviour
         play.SetActive(false);
         quit.SetActive(false);
 
-        w.SetActive(true);
-        a.SetActive(true);
-        s.SetActive(true);
-        d.SetActive(true);
-        shift.SetActive(true);
+        controll_list.SetActive(true);
 
+        button_pressed.Play();
     }
 }
