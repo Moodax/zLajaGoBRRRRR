@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CarController : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class CarController : MonoBehaviour
     [SerializeField] private float motorForce;
     [SerializeField] private float breakForce;
     [SerializeField] private float maxSteerAngle;
+    public GameObject speed;
     private bool braked;
 
     [SerializeField] private WheelCollider wheelColliderLeftFront;
@@ -45,6 +47,18 @@ public class CarController : MonoBehaviour
         wheelColliderLeftBack.ConfigureVehicleSubsteps(5, 12, 15);
         wheelColliderRightBack.ConfigureVehicleSubsteps(5, 12, 15);
         HandleMotor();
+        
+        var velocity = GetComponent<Rigidbody>().velocity;
+        var localVel = transform.InverseTransformDirection(velocity);
+ 
+        if (localVel.z > 0)
+        {
+            speed.GetComponent<Text>().text=-(Int32)GetComponent<Rigidbody>().velocity.magnitude*3.6 +" Km/h";
+        }
+        else
+        {
+            speed.GetComponent<Text>().text=(Int32)GetComponent<Rigidbody>().velocity.magnitude*3.6 +" Km/h";
+        }
         HandleSteering();
         UpdateWheels();
     }
@@ -62,6 +76,7 @@ public class CarController : MonoBehaviour
         wheelColliderLeftBack.motorTorque = verticalInput * motorForce;
         wheelColliderRightBack.motorTorque = verticalInput * motorForce;
         currentbreakForce = isBreaking ? breakForce : 0f;
+        
         ApplyBreaking();
     }
 
