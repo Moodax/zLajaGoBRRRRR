@@ -389,6 +389,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 160177327}
+  - component: {fileID: 160177328}
   m_Layer: 0
   m_Name: Icy
   m_TagString: Untagged
@@ -411,6 +412,18 @@ Transform:
   m_Father: {fileID: 1104719104}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &160177328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160177326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9bb1d9b4893a645a5dbd489e70b6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &200307791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1679,6 +1692,7 @@ MonoBehaviour:
   controlls: {fileID: 1878207452}
   quit: {fileID: 1285338365}
   play: {fileID: 384640584}
+  icy: {fileID: 1712821869}
   w: {fileID: 1111136746}
   a: {fileID: 1614821042}
   s: {fileID: 200307791}
@@ -2456,6 +2470,7 @@ MonoBehaviour:
   controlls: {fileID: 1878207452}
   quit: {fileID: 1285338365}
   play: {fileID: 384640584}
+  icy: {fileID: 1712821869}
 --- !u!1 &1501605296
 GameObject:
   m_ObjectHideFlags: 0
@@ -2753,9 +2768,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: openForest, Assembly-CSharp
-        m_MethodName: forest
+      - m_Target: {fileID: 160177328}
+        m_TargetAssemblyTypeName: openIcy, Assembly-CSharp
+        m_MethodName: icy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
