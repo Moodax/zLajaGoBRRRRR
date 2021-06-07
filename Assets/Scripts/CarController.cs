@@ -40,6 +40,10 @@ public class CarController : MonoBehaviour
     private void FixedUpdate()
     {
         GetInput();
+        wheelColliderLeftFront.ConfigureVehicleSubsteps(5, 12, 15);
+        wheelColliderRightFront.ConfigureVehicleSubsteps(5, 12, 15);
+        wheelColliderLeftBack.ConfigureVehicleSubsteps(5, 12, 15);
+        wheelColliderRightBack.ConfigureVehicleSubsteps(5, 12, 15);
         HandleMotor();
         HandleSteering();
         UpdateWheels();
@@ -66,19 +70,19 @@ public class CarController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         { 
         friction = wheelColliderRightBack.sidewaysFriction;
-        friction.extremumSlip = 1.2f;
+        friction.extremumSlip = 1f;
         wheelColliderRightBack.sidewaysFriction = friction;
 
         friction = wheelColliderLeftBack.sidewaysFriction;
-        friction.extremumSlip = 1.2f;
+        friction.extremumSlip = 1f;
         wheelColliderLeftBack.sidewaysFriction = friction;
 
         friction = wheelColliderLeftFront.sidewaysFriction;
-        friction.extremumValue = 2f;
+        friction.extremumValue = 1.5f;
         wheelColliderLeftFront.sidewaysFriction = friction;
 
         friction = wheelColliderRightFront.sidewaysFriction;
-        friction.extremumValue = 2f;
+        friction.extremumValue = 1.5f;
         wheelColliderRightFront.sidewaysFriction = friction;
 
         braked=true;

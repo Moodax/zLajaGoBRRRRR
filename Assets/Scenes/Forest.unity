@@ -590,7 +590,7 @@ WheelCollider:
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
-  m_Mass: 90
+  m_Mass: 60
   m_WheelDampingRate: 0.001
   m_ForwardFriction:
     m_ExtremumSlip: 2
@@ -1163,12 +1163,12 @@ WheelCollider:
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
-  m_Mass: 90
+  m_Mass: 60
   m_WheelDampingRate: 0.001
   m_ForwardFriction:
     m_ExtremumSlip: 2
     m_ExtremumValue: 5
-    m_AsymptoteSlip: 10
+    m_AsymptoteSlip: 5
     m_AsymptoteValue: 2
     m_Stiffness: 1
   m_SidewaysFriction:
@@ -1272,7 +1272,7 @@ WheelCollider:
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
-  m_Mass: 90
+  m_Mass: 60
   m_WheelDampingRate: 0.001
   m_ForwardFriction:
     m_ExtremumSlip: 2
@@ -1647,7 +1647,7 @@ WheelCollider:
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
-  m_Mass: 90
+  m_Mass: 60
   m_WheelDampingRate: 0.001
   m_ForwardFriction:
     m_ExtremumSlip: 2
@@ -1968,7 +1968,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7824127258144429762}
   serializedVersion: 2
-  m_Mass: 3000
+  m_Mass: 2700
   m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -2012,7 +2012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centerOfMass: {fileID: 663665316}
-  motorForce: 2000
+  motorForce: 2500
   breakForce: 3000
   maxSteerAngle: 30
   wheelColliderLeftFront: {fileID: 376860431}
