@@ -1952,6 +1952,7 @@ GameObject:
   - component: {fileID: 7824127258144429764}
   - component: {fileID: 7824127258144429763}
   - component: {fileID: 7824127258144429765}
+  - component: {fileID: 7824127258144429766}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -2022,6 +2023,19 @@ MonoBehaviour:
   wheelRightFront: {fileID: 1937994723}
   wheelLeftBack: {fileID: 779225942}
   wheelRightBack: {fileID: 1392802876}
+--- !u!114 &7824127258144429766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7824127258144429762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30a3f5aad908b9740a24e4762c497963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  br: 1
 --- !u!33 &7895389041051902858
 MeshFilter:
   m_ObjectHideFlags: 0

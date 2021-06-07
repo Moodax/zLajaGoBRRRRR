@@ -11,6 +11,7 @@ public class backbutton : MonoBehaviour
     public GameObject controlls;
     public GameObject quit;
     public GameObject play;
+    public GameObject icy;
 
     public GameObject w;
     public GameObject a;
@@ -22,6 +23,7 @@ public class backbutton : MonoBehaviour
     {
         desert.SetActive(false);
         forest.SetActive(false);
+        icy.SetActive(false);
         back.SetActive(false);
         controlls.SetActive(true);
         play.SetActive(true);

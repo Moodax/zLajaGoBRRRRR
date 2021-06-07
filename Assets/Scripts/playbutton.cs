@@ -11,11 +11,14 @@ public class playbutton : MonoBehaviour
     public GameObject controlls;
     public GameObject quit;
     public GameObject play;
+    public GameObject icy;
 
     public void selectLevel()
     {
         desert.SetActive(true);
         forest.SetActive(true);
+        icy.SetActive(true);
+
         back.SetActive(true);
         controlls.SetActive(false);
         play.SetActive(false);
