@@ -12,6 +12,7 @@ public class time : MonoBehaviour
     private bool idi = false;
     bool jednom=false;
     public GameObject car;
+    public AudioSource zikica;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,10 @@ public class time : MonoBehaviour
         car.GetComponent<CarController>().enabled = false;
 
         odbrojavanje += Time.deltaTime;
-        if (odbrojavanje >= 1 && odbrojavanje <= 2) {countdown.text = "3";}
+        zikica.Play();
+        if (odbrojavanje >= 1 && odbrojavanje <= 2) {countdown.text = "3";
+            
+        }
         else if (odbrojavanje >= 2 && odbrojavanje <= 3) countdown.text = "2";
         else if (odbrojavanje >= 3 && odbrojavanje <= 4) countdown.text = "1";
         else if (odbrojavanje >= 4 && odbrojavanje <= 5) countdown.text = "GO!";
