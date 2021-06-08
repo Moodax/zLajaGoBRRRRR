@@ -11,6 +11,10 @@ public class CheckpointSystem : MonoBehaviour
     public GameObject time;
     public GameObject car;
     public GameObject finish;
+    public GameObject kamera;
+    public AudioSource sound;
+    public bool if_finish;
+
     void Start()
     {
         
@@ -104,7 +108,14 @@ public class CheckpointSystem : MonoBehaviour
             time.GetComponent<Text>().enabled=false;
             }
             finish.GetComponent<CheckpointSystem>().enabled=true;
+
+            if (if_finish)
+            {
+                sound.Play();
+                kamera.GetComponent<CameraFollow>().enabled = false;
+            }
             Destroy(gameObject);
+
         }
     }
 
