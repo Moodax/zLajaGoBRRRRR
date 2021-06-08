@@ -32,7 +32,7 @@ public class CheckpointSystem : MonoBehaviour
         {
             if(Object.FindObjectsOfType<CheckpointSystem>().Length==1)
             {
-                Debug.Log("JEBEMU MATER");
+            Debug.Log("JEBEMU MATER");
             Scene currentScene = SceneManager.GetActiveScene ();
             string sceneName = currentScene.name;
 

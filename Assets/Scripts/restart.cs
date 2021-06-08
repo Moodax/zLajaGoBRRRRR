@@ -1,22 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SceneManagement;
-
+using UnityEngine.SceneManagement;
 public class restart : MonoBehaviour
 {
     public short br;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R) == true) resetLevel();
+        if (Input.GetKeyDown(KeyCode.R) == true) {
+        Scene currentScene = SceneManager.GetActiveScene ();
+        SceneManager.LoadScene(currentScene.name);
+        }
     }
-
-    void resetLevel()
-    {
-        if (br == 1) UnityEngine.SceneManagement.SceneManager.LoadScene("forest");
-        if (br == 2) UnityEngine.SceneManagement.SceneManager.LoadScene("desert");
-        if (br == 3) UnityEngine.SceneManagement.SceneManager.LoadScene("icy");
-    }
-
 }
