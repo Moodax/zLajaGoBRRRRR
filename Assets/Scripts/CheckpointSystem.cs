@@ -97,7 +97,9 @@ public class CheckpointSystem : MonoBehaviour
                 PlayerPrefs.SetFloat("hsicy",float.Parse(time.GetComponent<Text>().text));
                 tekst.GetComponent<Text>().text+= "\nČestitamo! Prvi put ste završili stazu!";
             }
+            
             }
+            Debug.Log(highscore);
             car.GetComponent<CarController>().enabled = false;
             time.GetComponent<Text>().enabled=false;
             }

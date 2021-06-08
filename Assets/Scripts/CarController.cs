@@ -33,8 +33,12 @@ public class CarController : MonoBehaviour
     [SerializeField] private Transform wheelLeftBack;
     [SerializeField] private Transform wheelRightBack;
     private Rigidbody _rigidbody;
+    private bool firstTime;
+    private bool air;
     void Start()
     {
+        air=false;
+        firstTime=false;
         _rigidbody = GetComponent<Rigidbody>();
         _rigidbody.centerOfMass = centerOfMass.localPosition;
         braked=false;
@@ -59,11 +63,32 @@ public class CarController : MonoBehaviour
         {
             speed.GetComponent<Text>().text=(Int32)GetComponent<Rigidbody>().velocity.magnitude*3.6 +" Km/h";
         }
+
+        if(!isGrounded(wheelColliderLeftFront)&& !isGrounded(wheelColliderRightFront)&& !isGrounded(wheelColliderLeftBack)&& !isGrounded(wheelColliderRightBack))
+        {
+            air=true;
+            if(Input.GetKey(KeyCode.LeftShift) && firstTime)
+            {
+            _rigidbody.constraints=RigidbodyConstraints.FreezeRotationX;
+            firstTime=false;
+            }
+        }
+        else 
+        {
+        _rigidbody.constraints=RigidbodyConstraints.None;
+        air=false;
+        firstTime=true;
+        }
         HandleSteering();
         UpdateWheels();
     }
 
-
+    private bool isGrounded(WheelCollider wheel)
+    {
+        if(wheel.GetGroundHit(out WheelHit hit))
+        return true;
+        return false;
+    }
     private void GetInput()
     {
         horizontalInput = Input.GetAxis(HORIZONTAL);
@@ -76,7 +101,7 @@ public class CarController : MonoBehaviour
         wheelColliderLeftBack.motorTorque = verticalInput * motorForce;
         wheelColliderRightBack.motorTorque = verticalInput * motorForce;
         currentbreakForce = isBreaking ? breakForce : 0f;
-        
+        if(!air)
         ApplyBreaking();
     }
 
