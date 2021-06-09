@@ -13,7 +13,6 @@ public class CheckpointSystem : MonoBehaviour
     public GameObject finish;
     public GameObject kamera;
     public AudioSource sound;
-    public bool if_finish;
 
     void Start()
     {
@@ -36,10 +35,11 @@ public class CheckpointSystem : MonoBehaviour
         {
             if(Object.FindObjectsOfType<CheckpointSystem>().Length==1)
             {
-            Debug.Log("JEBEMU MATER");
+            car.GetComponent<AudioSource>().mute=true;
             Scene currentScene = SceneManager.GetActiveScene ();
             string sceneName = currentScene.name;
-
+            sound.Play();
+            kamera.GetComponent<CameraFollow>().enabled = false;
             if(sceneName=="Forest")
             {
             if(PlayerPrefs.HasKey("hsforest"))
@@ -109,11 +109,8 @@ public class CheckpointSystem : MonoBehaviour
             }
             finish.GetComponent<CheckpointSystem>().enabled=true;
 
-            if (if_finish)
-            {
-                sound.Play();
-                kamera.GetComponent<CameraFollow>().enabled = false;
-            }
+                
+            
             Destroy(gameObject);
 
         }

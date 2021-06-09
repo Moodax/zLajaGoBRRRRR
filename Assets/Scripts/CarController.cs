@@ -32,11 +32,14 @@ public class CarController : MonoBehaviour
     [SerializeField] private Transform wheelRightFront;
     [SerializeField] private Transform wheelLeftBack;
     [SerializeField] private Transform wheelRightBack;
+    public GameObject pic;
     private Rigidbody _rigidbody;
     private bool firstTime;
     private bool air;
+    
     void Start()
     {
+       
         air=false;
         firstTime=false;
         _rigidbody = GetComponent<Rigidbody>();
@@ -45,11 +48,13 @@ public class CarController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if(!air)
         GetInput();
         wheelColliderLeftFront.ConfigureVehicleSubsteps(5, 12, 15);
         wheelColliderRightFront.ConfigureVehicleSubsteps(5, 12, 15);
         wheelColliderLeftBack.ConfigureVehicleSubsteps(5, 12, 15);
         wheelColliderRightBack.ConfigureVehicleSubsteps(5, 12, 15);
+        if(!air)
         HandleMotor();
         
         var velocity = GetComponent<Rigidbody>().velocity;
@@ -57,13 +62,19 @@ public class CarController : MonoBehaviour
  
         if (localVel.z > 0)
         {
-            speed.GetComponent<Text>().text=-(Int32)GetComponent<Rigidbody>().velocity.magnitude*3.6 +" Km/h";
+            speed.GetComponent<Text>().text=(-(float)GetComponent<Rigidbody>().velocity.magnitude*3.6).ToString("#.0") +" Km/h";
         }
         else
         {
-            speed.GetComponent<Text>().text=(Int32)GetComponent<Rigidbody>().velocity.magnitude*3.6 +" Km/h";
+            speed.GetComponent<Text>().text=((float)GetComponent<Rigidbody>().velocity.magnitude*3.6).ToString("#.0") +" Km/h";
         }
-
+        pic.GetComponent<Image>().fillAmount=GetComponent<Rigidbody>().velocity.magnitude*3.6f/120;
+        if(GetComponent<Rigidbody>().velocity.magnitude*3.6f/50>0.2f)
+        GetComponent<AudioSource>().pitch=GetComponent<Rigidbody>().velocity.magnitude*3.6f/50;
+        else GetComponent<AudioSource>().pitch=0.2f;
+        if(!GetComponent<AudioSource>().isPlaying)
+        GetComponent<AudioSource>().Play();
+        GetComponent<AudioSource>().loop=true;
         if(!isGrounded(wheelColliderLeftFront)&& !isGrounded(wheelColliderRightFront)&& !isGrounded(wheelColliderLeftBack)&& !isGrounded(wheelColliderRightBack))
         {
             air=true;
@@ -98,6 +109,10 @@ public class CarController : MonoBehaviour
 
     private void HandleMotor()
     {
+        if(air)
+        {
+            verticalInput=0;
+        }
         wheelColliderLeftBack.motorTorque = verticalInput * motorForce;
         wheelColliderRightBack.motorTorque = verticalInput * motorForce;
         currentbreakForce = isBreaking ? breakForce : 0f;

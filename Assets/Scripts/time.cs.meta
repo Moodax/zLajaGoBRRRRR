@@ -3,7 +3,10 @@ guid: d0f515a5be4d98f468d8ce3ea552cf20
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - showTime: {instanceID: 0}
+  - countdown: {instanceID: 0}
+  - car: {fileID: 4675429182094976949, guid: 016e34e0c3a714b4f99296fcc399ae96, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
