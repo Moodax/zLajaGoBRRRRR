@@ -17,6 +17,7 @@ public class pauseGame : MonoBehaviour
     private void Start()
     {  
         car=GameObject.Find("Car");
+        resume();
         countdown.Play();
     }
 
