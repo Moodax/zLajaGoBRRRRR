@@ -849,7 +849,6 @@ MonoBehaviour:
   wheelRightFront: {fileID: 1046422916868695217}
   wheelLeftBack: {fileID: 1046422916137753604}
   wheelRightBack: {fileID: 1046422917397506926}
-  pic: {fileID: 0}
 --- !u!114 &7066506602893558164
 MonoBehaviour:
   m_ObjectHideFlags: 0

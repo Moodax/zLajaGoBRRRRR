@@ -46,18 +46,18 @@ public class CheckpointSystem : MonoBehaviour
             {
                 highscore=PlayerPrefs.GetFloat("hsforest");
             }
-            else highscore=float.Parse(time.GetComponent<Text>().text);
+            else highscore=float.Parse(time.GetComponent<TMPro.TMP_Text>().text);
             
-            tekst.GetComponent<Text>().text="Završili ste utrku s vremenom: "+ time.GetComponent<Text>().text;
-            if(highscore>float.Parse(time.GetComponent<Text>().text))
+            tekst.GetComponent<TMPro.TMP_Text>().text="Završili ste utrku s vremenom: "+ time.GetComponent<TMPro.TMP_Text>().text;
+            if(highscore>float.Parse(time.GetComponent<TMPro.TMP_Text>().text))
             {
-                PlayerPrefs.SetFloat("hsforest",float.Parse(time.GetComponent<Text>().text));
-                tekst.GetComponent<Text>().text+= "\nČestitamo! Oborili ste rekord! Stari rekord je iznosio "+ highscore;
+                PlayerPrefs.SetFloat("hsforest",float.Parse(time.GetComponent<TMPro.TMP_Text>().text));
+                tekst.GetComponent<TMPro.TMP_Text>().text+= "\nČestitamo! Oborili ste rekord! Stari rekord je iznosio "+ highscore;
             }
             else if(!PlayerPrefs.HasKey("hsforest"))
             {
-                PlayerPrefs.SetFloat("hsforest",float.Parse(time.GetComponent<Text>().text));
-                tekst.GetComponent<Text>().text+= "\nČestitamo! Prvi put ste završili stazu!";
+                PlayerPrefs.SetFloat("hsforest",float.Parse(time.GetComponent<TMPro.TMP_Text>().text));
+                tekst.GetComponent<TMPro.TMP_Text>().text+= "\nČestitamo! Prvi put ste završili stazu!";
             }
 
             }
@@ -67,18 +67,18 @@ public class CheckpointSystem : MonoBehaviour
             {
                 highscore=PlayerPrefs.GetFloat("hsdesert");
             }
-            else highscore=float.Parse(time.GetComponent<Text>().text);
+            else highscore=float.Parse(time.GetComponent<TMPro.TMP_Text>().text);
             
-            tekst.GetComponent<Text>().text="Završili ste utrku s vremenom: "+ time.GetComponent<Text>().text;
-            if(highscore>float.Parse(time.GetComponent<Text>().text))
+            tekst.GetComponent<TMPro.TMP_Text>().text="Završili ste utrku s vremenom: "+ time.GetComponent<TMPro.TMP_Text>().text;
+            if(highscore>float.Parse(time.GetComponent<TMPro.TMP_Text>().text))
             {
-                PlayerPrefs.SetFloat("hsdesert",float.Parse(time.GetComponent<Text>().text));
-                tekst.GetComponent<Text>().text+= "\nČestitamo! Oborili ste rekord! Stari rekord je iznosio "+ highscore;
+                PlayerPrefs.SetFloat("hsdesert",float.Parse(time.GetComponent<TMPro.TMP_Text>().text));
+                tekst.GetComponent<TMPro.TMP_Text>().text+= "\nČestitamo! Oborili ste rekord! Stari rekord je iznosio "+ highscore;
             }
             else if(!PlayerPrefs.HasKey("hsdesert"))
             {
-                PlayerPrefs.SetFloat("hsdesert",float.Parse(time.GetComponent<Text>().text));
-                tekst.GetComponent<Text>().text+= "\nČestitamo! Prvi put ste završili stazu!";
+                PlayerPrefs.SetFloat("hsdesert",float.Parse(time.GetComponent<TMPro.TMP_Text>().text));
+                tekst.GetComponent<TMPro.TMP_Text>().text+= "\nČestitamo! Prvi put ste završili stazu!";
             }
             }
 
@@ -88,24 +88,24 @@ public class CheckpointSystem : MonoBehaviour
             {
                 highscore=PlayerPrefs.GetFloat("hsicy");
             }
-            else highscore=float.Parse(time.GetComponent<Text>().text);
+            else highscore=float.Parse(time.GetComponent<TMPro.TMP_Text>().text);
             
-            tekst.GetComponent<Text>().text="Završili ste utrku s vremenom: "+ time.GetComponent<Text>().text;
-            if(highscore>float.Parse(time.GetComponent<Text>().text))
+            tekst.GetComponent<TMPro.TMP_Text>().text="Završili ste utrku s vremenom: "+ time.GetComponent<TMPro.TMP_Text>().text;
+            if(highscore>float.Parse(time.GetComponent<TMPro.TMP_Text>().text))
             {
-                PlayerPrefs.SetFloat("hsicy",float.Parse(time.GetComponent<Text>().text));
-                tekst.GetComponent<Text>().text+= "\nČestitamo! Oborili ste rekord! Stari rekord je iznosio "+ highscore;
+                PlayerPrefs.SetFloat("hsicy",float.Parse(time.GetComponent<TMPro.TMP_Text>().text));
+                tekst.GetComponent<TMPro.TMP_Text>().text+= "\nČestitamo! Oborili ste rekord! Stari rekord je iznosio "+ highscore;
             }
             else if(!PlayerPrefs.HasKey("hsicy"))
             {
-                PlayerPrefs.SetFloat("hsicy",float.Parse(time.GetComponent<Text>().text));
-                tekst.GetComponent<Text>().text+= "\nČestitamo! Prvi put ste završili stazu!";
+                PlayerPrefs.SetFloat("hsicy",float.Parse(time.GetComponent<TMPro.TMP_Text>().text));
+                tekst.GetComponent<TMPro.TMP_Text>().text+= "\nČestitamo! Prvi put ste završili stazu!";
             }
             
             }
             Debug.Log(highscore);
             car.GetComponent<CarController>().enabled = false;
-            time.GetComponent<Text>().enabled=false;
+            time.GetComponent<TMPro.TMP_Text>().enabled=false;
             }
             finish.GetComponent<CheckpointSystem>().enabled=true;
 

@@ -32,7 +32,6 @@ public class CarController : MonoBehaviour
     [SerializeField] private Transform wheelRightFront;
     [SerializeField] private Transform wheelLeftBack;
     [SerializeField] private Transform wheelRightBack;
-    public GameObject pic;
     private Rigidbody _rigidbody;
     private bool firstTime;
     private bool air;
@@ -62,13 +61,12 @@ public class CarController : MonoBehaviour
  
         if (localVel.z > 0)
         {
-            speed.GetComponent<Text>().text=(-(float)GetComponent<Rigidbody>().velocity.magnitude*3.6).ToString("#.0") +" Km/h";
+            speed.GetComponent<TMPro.TMP_Text>().text=(-(float)GetComponent<Rigidbody>().velocity.magnitude*3.6).ToString("#.0") +" Km/h";
         }
         else
         {
-            speed.GetComponent<Text>().text=((float)GetComponent<Rigidbody>().velocity.magnitude*3.6).ToString("#.0") +" Km/h";
+            speed.GetComponent<TMPro.TMP_Text>().text=((float)GetComponent<Rigidbody>().velocity.magnitude*3.6).ToString("#.0") +" Km/h";
         }
-        pic.GetComponent<Image>().fillAmount=GetComponent<Rigidbody>().velocity.magnitude*3.6f/120;
         if(GetComponent<Rigidbody>().velocity.magnitude*3.6f/50>0.2f)
         GetComponent<AudioSource>().pitch=GetComponent<Rigidbody>().velocity.magnitude*3.6f/50;
         else GetComponent<AudioSource>().pitch=0.2f;

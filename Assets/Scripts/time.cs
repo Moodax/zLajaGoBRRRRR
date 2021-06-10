@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class time : MonoBehaviour
 {
-    public Text showTime;
-    public Text countdown;
+    public TMPro.TMP_Text showTime;
+    public TMPro.TMP_Text countdown;
     public float vrijeme=0;
     public float odbrojavanje=0;
     private bool idi = false;

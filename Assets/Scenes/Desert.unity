@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028504, g: 0.2257159, b: 0.30692488, a: 1}
+  m_IndirectSpecularColor: {r: 0.1802847, g: 0.2257156, b: 0.30692425, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -319,11 +319,15 @@ PrefabInstance:
     - target: {fileID: 7066506602893558167, guid: 016e34e0c3a714b4f99296fcc399ae96, type: 3}
       propertyPath: pic
       value: 
-      objectReference: {fileID: 1264197140}
+      objectReference: {fileID: 0}
     - target: {fileID: 7066506602893558167, guid: 016e34e0c3a714b4f99296fcc399ae96, type: 3}
       propertyPath: speed
       value: 
       objectReference: {fileID: 1889994155}
+    - target: {fileID: 7066506602893558167, guid: 016e34e0c3a714b4f99296fcc399ae96, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7066506602893558166, guid: 016e34e0c3a714b4f99296fcc399ae96, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 016e34e0c3a714b4f99296fcc399ae96, type: 3}
@@ -416,7 +420,6 @@ MonoBehaviour:
   finish: {fileID: 1704121490}
   kamera: {fileID: 963194225}
   sound: {fileID: 541692440}
-  if_finish: 0
 --- !u!65 &454871312
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -985,11 +988,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1264197140 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3289184704360244620, guid: 731da9df96c541b4c8a0a426d86655e8, type: 3}
-  m_PrefabInstance: {fileID: 3289184703475645336}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1634063190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,7 +1151,6 @@ MonoBehaviour:
   finish: {fileID: 1704121490}
   kamera: {fileID: 963194225}
   sound: {fileID: 541692440}
-  if_finish: 1
 --- !u!65 &1704121492
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1429,6 +1426,14 @@ PrefabInstance:
       propertyPath: countdown
       value: 
       objectReference: {fileID: 36805098}
+    - target: {fileID: 3289184704828767797, guid: 731da9df96c541b4c8a0a426d86655e8, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3289184704879232716, guid: 731da9df96c541b4c8a0a426d86655e8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3663186347585320710, guid: 731da9df96c541b4c8a0a426d86655e8, type: 3}
       propertyPath: m_Name
       value: Canvas
