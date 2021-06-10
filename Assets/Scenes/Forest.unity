@@ -1417,6 +1417,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 617691156, guid: 016e34e0c3a714b4f99296fcc399ae96, type: 3}
+      propertyPath: DopplerLevel
+      value: 4.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 617691156, guid: 016e34e0c3a714b4f99296fcc399ae96, type: 3}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 617691156, guid: 016e34e0c3a714b4f99296fcc399ae96, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4453552142669217181, guid: 016e34e0c3a714b4f99296fcc399ae96, type: 3}
       propertyPath: m_RootOrder
       value: 2
