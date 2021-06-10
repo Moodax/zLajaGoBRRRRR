@@ -27,7 +27,6 @@ public class CheckpointSystem : MonoBehaviour
     private void FixedUpdate()
     {
         CheckForCollision();
-        Debug.Log(Object.FindObjectsOfType<CheckpointSystem>().Length);
     }
     private void CheckForCollision()
     {        
@@ -35,6 +34,8 @@ public class CheckpointSystem : MonoBehaviour
         {
             if(Object.FindObjectsOfType<CheckpointSystem>().Length==1)
             {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible=true;
             car.GetComponent<AudioSource>().mute=true;
             Scene currentScene = SceneManager.GetActiveScene ();
             string sceneName = currentScene.name;
@@ -48,16 +49,16 @@ public class CheckpointSystem : MonoBehaviour
             }
             else highscore=float.Parse(time.GetComponent<TMPro.TMP_Text>().text);
             
-            tekst.GetComponent<TMPro.TMP_Text>().text="Završili ste utrku s vremenom: "+ time.GetComponent<TMPro.TMP_Text>().text;
+            tekst.GetComponent<TMPro.TMP_Text>().text="Time: "+ time.GetComponent<TMPro.TMP_Text>().text;
             if(highscore>float.Parse(time.GetComponent<TMPro.TMP_Text>().text))
             {
                 PlayerPrefs.SetFloat("hsforest",float.Parse(time.GetComponent<TMPro.TMP_Text>().text));
-                tekst.GetComponent<TMPro.TMP_Text>().text+= "\nČestitamo! Oborili ste rekord! Stari rekord je iznosio "+ highscore;
+                tekst.GetComponent<TMPro.TMP_Text>().text+= "\nCongrats! You broke the record! The old record was: "+ highscore;
             }
             else if(!PlayerPrefs.HasKey("hsforest"))
             {
                 PlayerPrefs.SetFloat("hsforest",float.Parse(time.GetComponent<TMPro.TMP_Text>().text));
-                tekst.GetComponent<TMPro.TMP_Text>().text+= "\nČestitamo! Prvi put ste završili stazu!";
+                tekst.GetComponent<TMPro.TMP_Text>().text+= "\nCongrats! This is your first time finishing this track!";
             }
 
             }
@@ -69,16 +70,16 @@ public class CheckpointSystem : MonoBehaviour
             }
             else highscore=float.Parse(time.GetComponent<TMPro.TMP_Text>().text);
             
-            tekst.GetComponent<TMPro.TMP_Text>().text="Završili ste utrku s vremenom: "+ time.GetComponent<TMPro.TMP_Text>().text;
+            tekst.GetComponent<TMPro.TMP_Text>().text="Time: "+ time.GetComponent<TMPro.TMP_Text>().text;
             if(highscore>float.Parse(time.GetComponent<TMPro.TMP_Text>().text))
             {
                 PlayerPrefs.SetFloat("hsdesert",float.Parse(time.GetComponent<TMPro.TMP_Text>().text));
-                tekst.GetComponent<TMPro.TMP_Text>().text+= "\nČestitamo! Oborili ste rekord! Stari rekord je iznosio "+ highscore;
+                tekst.GetComponent<TMPro.TMP_Text>().text+= "\nCongrats! You broke the record! The old record was: "+ highscore;
             }
             else if(!PlayerPrefs.HasKey("hsdesert"))
             {
                 PlayerPrefs.SetFloat("hsdesert",float.Parse(time.GetComponent<TMPro.TMP_Text>().text));
-                tekst.GetComponent<TMPro.TMP_Text>().text+= "\nČestitamo! Prvi put ste završili stazu!";
+                tekst.GetComponent<TMPro.TMP_Text>().text+= "\nCongrats! This is your first time finishing this track!";
             }
             }
 
@@ -90,20 +91,19 @@ public class CheckpointSystem : MonoBehaviour
             }
             else highscore=float.Parse(time.GetComponent<TMPro.TMP_Text>().text);
             
-            tekst.GetComponent<TMPro.TMP_Text>().text="Završili ste utrku s vremenom: "+ time.GetComponent<TMPro.TMP_Text>().text;
+            tekst.GetComponent<TMPro.TMP_Text>().text="Time: "+ time.GetComponent<TMPro.TMP_Text>().text;
             if(highscore>float.Parse(time.GetComponent<TMPro.TMP_Text>().text))
             {
                 PlayerPrefs.SetFloat("hsicy",float.Parse(time.GetComponent<TMPro.TMP_Text>().text));
-                tekst.GetComponent<TMPro.TMP_Text>().text+= "\nČestitamo! Oborili ste rekord! Stari rekord je iznosio "+ highscore;
+                tekst.GetComponent<TMPro.TMP_Text>().text+= "\nCongrats! You broke the record! The old record was: "+ highscore;
             }
             else if(!PlayerPrefs.HasKey("hsicy"))
             {
                 PlayerPrefs.SetFloat("hsicy",float.Parse(time.GetComponent<TMPro.TMP_Text>().text));
-                tekst.GetComponent<TMPro.TMP_Text>().text+= "\nČestitamo! Prvi put ste završili stazu!";
+                tekst.GetComponent<TMPro.TMP_Text>().text+= "\nCongrats! This is your first time finishing this track!";
             }
             
             }
-            Debug.Log(highscore);
             car.GetComponent<CarController>().enabled = false;
             time.GetComponent<TMPro.TMP_Text>().enabled=false;
             }

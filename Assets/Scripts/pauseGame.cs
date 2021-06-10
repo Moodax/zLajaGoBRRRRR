@@ -19,6 +19,7 @@ public class pauseGame : MonoBehaviour
         car=GameObject.Find("Car");
         resume();
         countdown.Play();
+        Cursor.visible=false;
     }
 
 
@@ -29,8 +30,17 @@ public class pauseGame : MonoBehaviour
         {
             
             if (if_paused)
-            resume();
-            else pause();
+            {
+                Debug.Log("JEBO TI MPAS MATER");
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                resume();
+            }
+            else {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible=true;
+                pause();
+            }
             
         }
         odbrojavanje += Time.deltaTime;
@@ -39,6 +49,7 @@ public class pauseGame : MonoBehaviour
 
     public void resume()
     {
+        Cursor.visible=false;
         car.GetComponent<AudioSource>().enabled=true;
         pauseUI.SetActive(false);
         if_paused = false;
@@ -46,6 +57,7 @@ public class pauseGame : MonoBehaviour
         music.Pause();
        if(odbrojavanje<5) countdown.Play();
         text.SetActive(true);
+       Cursor.visible=false;
     }
     void pause()
     {

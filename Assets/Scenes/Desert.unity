@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.1802847, g: 0.2257156, b: 0.30692425, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028504, g: 0.2257159, b: 0.30692488, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,17 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &13655822 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3289184703478768790, guid: 731da9df96c541b4c8a0a426d86655e8, type: 3}
-  m_PrefabInstance: {fileID: 3289184703475645336}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &36805097
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,19 +306,10 @@ PrefabInstance:
       value: Car
       objectReference: {fileID: 0}
     - target: {fileID: 7066506602893558167, guid: 016e34e0c3a714b4f99296fcc399ae96, type: 3}
-      propertyPath: pic
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7066506602893558167, guid: 016e34e0c3a714b4f99296fcc399ae96, type: 3}
       propertyPath: speed
       value: 
-      objectReference: {fileID: 1889994155}
-    - target: {fileID: 7066506602893558167, guid: 016e34e0c3a714b4f99296fcc399ae96, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7066506602893558166, guid: 016e34e0c3a714b4f99296fcc399ae96, type: 3}
+      objectReference: {fileID: 1055354465}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 016e34e0c3a714b4f99296fcc399ae96, type: 3}
 --- !u!1 &331270497
 GameObject:
@@ -379,11 +359,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &450731630 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3289184703043462646, guid: 731da9df96c541b4c8a0a426d86655e8, type: 3}
-  m_PrefabInstance: {fileID: 3289184703475645336}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &454871310
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,8 +389,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f38aec09835ad9147badd53a70da20bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tekst: {fileID: 450731630}
-  time: {fileID: 1246261942}
+  tekst: {fileID: 0}
+  time: {fileID: 0}
   car: {fileID: 617691148}
   finish: {fileID: 1704121490}
   kamera: {fileID: 963194225}
@@ -650,6 +625,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4453552142669217181, guid: 016e34e0c3a714b4f99296fcc399ae96, type: 3}
   m_PrefabInstance: {fileID: 47047018}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &622297808 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 962307243162539201, guid: 731da9df96c541b4c8a0a426d86655e8, type: 3}
+  m_PrefabInstance: {fileID: 3289184703475645336}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,6 +910,11 @@ MonoBehaviour:
   smoothRotation: 1
   followBehind: 1
   rotationDamping: 50
+--- !u!1 &1055354465 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4761970828919480357, guid: 731da9df96c541b4c8a0a426d86655e8, type: 3}
+  m_PrefabInstance: {fileID: 3289184703475645336}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1123872024
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,8 +944,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f515a5be4d98f468d8ce3ea552cf20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showTime: {fileID: 1246261944}
-  countdown: {fileID: 13655822}
+  showTime: {fileID: 1486253683}
+  countdown: {fileID: 622297808}
   vrijeme: 0
   odbrojavanje: 0
   car: {fileID: 617691148}
@@ -972,20 +963,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1246261942 stripped
+--- !u!1 &1486253681 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 3289184704377915694, guid: 731da9df96c541b4c8a0a426d86655e8, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2656354676643142208, guid: 731da9df96c541b4c8a0a426d86655e8, type: 3}
   m_PrefabInstance: {fileID: 3289184703475645336}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1246261944 stripped
+--- !u!114 &1486253683 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3289184704377915680, guid: 731da9df96c541b4c8a0a426d86655e8, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7406564777259837096, guid: 731da9df96c541b4c8a0a426d86655e8, type: 3}
   m_PrefabInstance: {fileID: 3289184703475645336}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1246261942}
+  m_GameObject: {fileID: 1486253681}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1634063190
@@ -1145,8 +1136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f38aec09835ad9147badd53a70da20bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tekst: {fileID: 450731630}
-  time: {fileID: 1246261942}
+  tekst: {fileID: 2120090429}
+  time: {fileID: 1486253681}
   car: {fileID: 617691148}
   finish: {fileID: 1704121490}
   kamera: {fileID: 963194225}
@@ -1178,9 +1169,9 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1889994155 stripped
+--- !u!1 &2120090429 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 3289184704828767795, guid: 731da9df96c541b4c8a0a426d86655e8, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2803707693400705553, guid: 731da9df96c541b4c8a0a426d86655e8, type: 3}
   m_PrefabInstance: {fileID: 3289184703475645336}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &173419486625422121

@@ -19,7 +19,6 @@ public class playbutton : MonoBehaviour
 
     public void selectLevel()
     {
-        Debug.Log("koji kurac");
         desert.SetActive(true);
         forest.SetActive(true);
         icy.SetActive(true);
